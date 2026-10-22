@@ -1,0 +1,5 @@
+---
+const { title = 'Confluence Buildathon 2026 | PES University', description = 'A 10-hour buildathon to improve existing software through accessibility, performance, privacy, security, modernisation and integration.' } = Astro.props;
+import '../styles.css';
+---
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#080d19"/><meta name="description" content={description}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><title>{title}</title></head><body><div id="progress" aria-hidden="true" style="position:fixed;z-index:30;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#62d4ef,#a18cff,#eb73a7)"></div><slot/><div class="grain" aria-hidden="true"></div><script>import { initMotion } from '../scripts/motion'; initMotion();</script></body></html>

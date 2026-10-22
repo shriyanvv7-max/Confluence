@@ -1,0 +1,11 @@
+---
+import { event, presentationTemplateUrl } from '../data/site';
+import InstitutionalBranding from './InstitutionalBranding.astro';
+---
+<footer>
+  <div class="shell footer-inner">
+    <div class="footer-org"><strong style="color:#e5eaf2">CONFLUENCE / 26</strong><br/>{event.organiser}<InstitutionalBranding compact={true} /></div>
+    <nav class="footer-links" aria-label="Footer navigation"><a class="nav-link" href="/#top">Home</a><a class="nav-link" href="/#event">Event details</a><a class="nav-link" href="/#roadmap">Roadmap</a><a class="nav-link" href="/#tracks">Tracks</a><a class="nav-link" href="/faqs">FAQs</a><a class="nav-link" href="/#register">Registration</a><a class="nav-link footer-template-link" href={presentationTemplateUrl} target="_blank" rel="noopener noreferrer">Presentation Template ↗</a></nav>
+    <div class="footer-contact">Roshan <a href="tel:7975634963">7975634963</a> &nbsp;·&nbsp; Ashwin <a href="tel:9740422386">9740422386</a></div>
+  </div>
+</footer>

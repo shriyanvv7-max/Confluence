@@ -1,0 +1,8 @@
+---
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<div class:list={['institutional-branding', compact && 'is-compact']} aria-label="Institutional logo assets">
+  <img src="/ieee-computer-society-pesu-student-branch.png" alt="IEEE Computer Society PES University Student Branch Chapter" width="342" height="147" />
+  <img src="/pes-university.png" alt="PES University" width="135" height="64" />
+</div>

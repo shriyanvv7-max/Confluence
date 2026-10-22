@@ -1,0 +1,24 @@
+---
+import { event, presentationTemplateUrl } from '../data/site';
+import InstitutionalBranding from './InstitutionalBranding.astro';
+import ConvergenceScene from './ConvergenceScene.astro';
+const { includeConvergence = false } = Astro.props;
+---
+<section class="section details" id="event" aria-labelledby="event-title">
+  <div class="shell">
+    <div class="kicker">03 / One day. Real building.</div>
+    <div class="details-grid">
+      <div><h2 id="event-title">The<br/><span style="color:var(--amber)">buildathon.</span></h2><p class="details-intro">Ten hours to turn a collision of ideas into something people can use. Bring your team, your curiosity, and a willingness to rethink what’s already here.</p><InstitutionalBranding /></div>
+      <dl class="detail-list">
+        <div class="detail-row"><dt>When</dt><dd>{event.date}<br/>{event.time}</dd></div>
+        <div class="detail-row"><dt>Where</dt><dd>{event.venue}<br/><a class="inline-link" href="https://maps.google.com/?q=PES+University+100+Feet+Ring+Road+Banashankari+Bengaluru" target="_blank" rel="noreferrer">Open directions ↗</a></dd></div>
+        <div class="detail-row"><dt>Team</dt><dd>{event.teamSize}</dd></div>
+        <div class="detail-row"><dt>Prize</dt><dd>{event.prize} cash prize</dd></div>
+        <div class="detail-row"><dt>Duration</dt><dd>{event.duration}</dd></div>
+        <div class="detail-row"><dt>Presented by</dt><dd>{event.organiser}</dd></div>
+        <div class="detail-row"><dt>Resources</dt><dd><a class="presentation-link" href={presentationTemplateUrl} target="_blank" rel="noopener noreferrer">Open Presentation Template ↗</a></dd></div>
+      </dl>
+    </div>
+  </div>
+  {includeConvergence && <ConvergenceScene />}
+</section>

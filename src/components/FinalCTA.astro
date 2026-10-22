@@ -1,0 +1,13 @@
+---
+import { event, registration, registrationUrl } from '../data/site';
+---
+<section class="final" id="register" aria-labelledby="final-title">
+  <div class="shell final-content">
+    <div class="kicker">Bring your systems together</div>
+    <h2 id="final-title">Meet at the<br/><span class="outline-word">CONFLUENCE.</span></h2>
+    <p class="final-lead">Registration deadline: {registration.deadline}.</p>
+    <a class="cta" href={registrationUrl} target="_blank" rel="noopener noreferrer">Registration <span>↗</span></a>
+    <div class="final-meta"><span>{event.date}</span><span>{event.time}</span><span>Cash prize {event.prize}</span></div>
+  </div>
+</section>
+

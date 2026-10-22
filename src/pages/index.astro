@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroScene from '../components/HeroScene.astro';
+import TrackPreview from '../components/TrackPreview.astro';
+import EventDetails from '../components/EventDetails.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Roadmap from '../components/Roadmap.astro';
+---
+<BaseLayout>
+  <SiteHeader />
+  <main>
+    <HeroScene />
+    <EventDetails includeConvergence={true} />
+    <Roadmap />
+    <TrackPreview />
+    <FaqSection />
+    <FinalCTA />
+  </main>
+  <SiteFooter />
+</BaseLayout>

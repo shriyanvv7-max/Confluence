@@ -1,0 +1,12 @@
+---
+import { event, registration, registrationUrl } from '../data/site';
+---
+<section class="section faq-section" id="faqs" aria-labelledby="faq-title">
+  <div class="shell faq-layout"><div><div class="kicker">05 / Good to know</div><h2 id="faq-title">Questions,<br/><span>answered.</span></h2><a class="text-link" href="/faqs">See all FAQs ↗</a></div><div class="faq-list">
+    <details><summary>Who can participate?</summary><p>Eligibility restrictions have not been specified here. Please confirm any participation requirements with the organisers.</p></details>
+    <details><summary>What is the team size?</summary><p>Teams should have {event.teamSize}.</p></details>
+    <details><summary>What is the event format?</summary><p>It is a 10-hour buildathon focused on improving existing software. Form a team of {event.teamSize}, submit an idea for preliminary screening, and await selection confirmation from organisers. Selected teams attend to build, test, and demonstrate an improvement. Specific screening criteria and timing have not been confirmed.</p></details>
+    <details><summary>What should we demonstrate?</summary><p>As general preparation, state the problem and a measurable goal, show the original behaviour and improved result, and provide suitable tests, comparisons, or other evidence. Prepare a working demonstration. These are preparation suggestions, not additional event rules.</p></details>
+    <details><summary>How do I register?</summary><p>Use the Registration link. The stated deadline was {registration.deadline}. A registration fee has not been specified.</p><a class="text-link" href={registrationUrl} target="_blank" rel="noopener noreferrer">Registration ↗</a></details>
+  </div></div>
+</section>

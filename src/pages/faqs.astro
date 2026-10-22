@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { event, registration, registrationUrl, tracks } from '../data/site';
+const questions = [
+  ['Who can participate?', 'Eligibility restrictions have not been specified here. Please confirm any participation requirements with the organisers.'],
+  ['What is the team size?', `Teams should have ${event.teamSize}.`],
+  ['What is the event format?', 'This is a 10-hour buildathon focused on improving existing software. Teams submit an idea for preliminary screening; selected teams attend to build, test, and demonstrate an improvement.'],
+  ['What are the seven tracks?', tracks.map((track) => track.name).join(', ') + '. The homepage Tracks section contains each challenge and its evidence requirements.'],
+  ['How does preliminary idea screening work?', 'Teams submit an idea for preliminary screening and await selection confirmation from organisers. Specific criteria and screening dates have not been confirmed here.'],
+  ['What should teams demonstrate?', 'As general preparation, state the problem and a measurable goal, show the original behaviour and improved result, and provide suitable tests, comparisons, or other evidence. Prepare a working demonstration. These are preparation suggestions, not additional event rules.'],
+  ['Where and when is the event?', `${event.date}, ${event.time}, at ${event.venue}.`],
+  ['What is the prize?', `${event.prize} cash prize.`],
+  ['How do participants register?', `Use the Registration link. The stated deadline was ${registration.deadline}.`],
+  ['Is there a registration fee?', 'A fee has not been confirmed. Please ask the organisers.'],
+  ['What should teams bring?', 'Equipment requirements have not been confirmed. As general preparation, bring the tools and materials needed to work on and demonstrate your existing system; confirm venue and equipment rules with organisers.'],
+  ['How can organisers be contacted?', `Contact Roshan at ${event.contacts[0].phone} or Ashwin at ${event.contacts[1].phone}.`],
+];
+---
+<BaseLayout title="FAQs | Confluence Buildathon 2026" description="Answers about participation, team size, challenge tracks, event logistics, registration and contacting organisers."><SiteHeader /><main class="detail-page"><section class="page-hero shell"><div class="kicker">Questions / Confluence Buildathon 2026</div><h1>Clear answers.<br/><span>Known details.</span></h1><p>This page covers the practical details participants ask about, with organiser contacts for anything else.</p></section><section class="shell faq-page-list">{questions.map(([question, answer]) => <details><summary>{question}</summary><p>{answer} {question.startsWith('How do participants') && <a href={registrationUrl} target="_blank" rel="noopener noreferrer">Registration ↗</a>}</p></details>)}</section></main><SiteFooter /></BaseLayout>
